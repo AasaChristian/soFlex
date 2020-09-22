@@ -1,26 +1,15 @@
-
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
+  View, Text
 } from 'react-native';
+import Head from './components/Head'
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+
 
 const App = () => {
   return(
     <View>
-      <Text>SoFlex</Text>
+      <Head/>
     </View>
   )
 }
