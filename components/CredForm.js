@@ -11,7 +11,7 @@ const CredForm = () => {
     <View>
         <View style={styles.inputView}>
           <TextInput
-          defaultValue={'Enter your Email Address'}
+          placeholder={'Enter your Email Address'}
           />
 
         </View>
@@ -19,7 +19,7 @@ const CredForm = () => {
         <View style={styles.inputView}>
 
         <TextInput
-          defaultValue='Enter your Password'
+          placeholder='Enter your Password'
           />
 
         </View>
