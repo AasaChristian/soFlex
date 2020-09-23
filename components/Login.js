@@ -6,9 +6,9 @@ import {
 
 
 
-const Login = () => {
+const Login = ({ navigation }) => {
 
-    const onPressLogin = () => Alert.alert('Login button pressed')
+    const onPressLogin = () => navigation.navigate('CredForm')
     const onPressReg = () => Alert.alert('Register button pressed')
   return(
     <View style={styles.loginView}>
