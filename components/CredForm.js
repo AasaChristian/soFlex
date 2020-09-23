@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {
-  View, Text, StyleSheet
+  View, Text, StyleSheet, TextInput
 } from 'react-native';
 
 
@@ -9,11 +9,18 @@ import {
 const CredForm = () => {
   return(
     <View>
-        <View style={styles}>
+        <View style={styles.inputView}>
+          <TextInput
+          defaultValue={'Enter your Email Address'}
+          />
 
         </View>
       
-        <View style={styles}>
+        <View style={styles.inputView}>
+
+        <TextInput
+          defaultValue='Enter your Password'
+          />
 
         </View>
     </View>
@@ -21,6 +28,11 @@ const CredForm = () => {
 }
 
 const styles = StyleSheet.create({
+  inputView:{
+    height: 100,
+    backgroundColor: 'grey'
+    
+  }
     
 
 })
