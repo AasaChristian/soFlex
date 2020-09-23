@@ -16,9 +16,7 @@ data = {
             sex: 'male'
         },
 
-        photo:{
-            
-        }
+        photo: []
 
 
     },
