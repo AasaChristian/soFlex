@@ -10,6 +10,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import CredForm from './components/CredForm';
 import Head from './components/Head'
 import Login from './components/Login'
+import DashBoard from './components/DashBoard'
+import Nav from './components/Nav';
 
 
 const Stack = createStackNavigator()
@@ -32,7 +34,14 @@ const App = () => {
         
         />
 
+        <Stack.Screen
+        name="Dashboard"
+        component={DashBoard}
+        options={{title: null}}
+        />
+      <Nav/>
       </Stack.Navigator>
+      
       
     </NavigationContainer>
     

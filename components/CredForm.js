@@ -6,13 +6,15 @@ import {
 
 
 
-const CredForm = () => {
+const CredForm = ({navigation}) => {
 
   const [creds, setCreds] = useState([{
     email: '',
     password: ''
   }])
   console.log(creds, "creds")
+
+  const submitForm = () => navigation.navigate('Dashboard')
   return(
     <View>
         <View style={styles.inputView}>
@@ -32,6 +34,7 @@ const CredForm = () => {
           value={creds.password}
           style ={styles.inputText}
           onChangeText={text => setCreds(text)}
+          onSubmitEditing={submitForm}
           />
 
         </View>

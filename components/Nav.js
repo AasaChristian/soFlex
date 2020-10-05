@@ -1,31 +1,27 @@
-
+       
 import React from 'react';
 import {
-  View, Text, StyleSheet
+  View, Text, StyleSheet, TouchableOpacity
 } from 'react-native';
-import data from '../ZDummyData'
 
 
 
-const Head = () => {
-  const username = data.user.Credentials.userName
+const Nav = ({navigation}) => {
+    const goToDashboard = () => navigation.navigate('Dashboard')
   return(
-    <View>
-      
-        <View style={styles.header}>
-        <Text style={styles.text}>CoFlex</Text>
-        </View>
-        <Text> Welcome {username}</Text>
-    </View>
+        <View style={styles.nav}>
+        <Text style={styles.navText}>Home</Text>
+        <TouchableOpacity onPress={goToDashboard}>
+            <Text style={styles.navText}>Dashboard</Text>
+        </TouchableOpacity>
+        
+        <Text style={styles.navText}>Home</Text>
+        <Text style={styles.navText}>Home</Text>
+        </View> 
   )
 }
 
 const styles = StyleSheet.create({
-    header: {
-        height: 60,
-        padding: 15,
-        backgroundColor: 'powderblue'
-    },
     text: {
         textAlign: 'center',
         fontSize: 23
@@ -53,4 +49,7 @@ const styles = StyleSheet.create({
 
 })
 
-export default Head;
+export default Nav;
+       
+       
+       
