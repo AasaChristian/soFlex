@@ -1,19 +1,36 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  View, Text, StyleSheet, Button, Alert, TouchableOpacity
+  View, Text, StyleSheet, Button, Alert, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard
 } from 'react-native';
+
+import { onChange } from 'react-native-reanimated';
+
+
 
 
 
 const Login = ({ navigation }) => {
+    const [user, setUser] = useState("whatever")
 
-    const onPressLogin = () => navigation.navigate('CredForm')
+    const handleChanges = e => {
+        setUser(e.target.value)   }
+        console.log(user, "user")
+
+    // const onPressLogin = () => navigation.navigate('CredForm')
+    const onPressLogin = () => navigation.navigate('Dashboard')
     const onPressReg = () => Alert.alert('Register button pressed')
   return(
+
     <View style={styles.loginView}>
-        <View style={styles.login}>
-            <TouchableOpacity
+        <TextInput       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        value={user}
+        onChange={text => handleChanges(text)}
+
+        />
+        <View style={styles.container}>
+            <TouchableOpacity style={styles.login}
+            
             onPress={onPressLogin}
             
             >
@@ -21,8 +38,8 @@ const Login = ({ navigation }) => {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.register}>
-        <TouchableOpacity
+        <View >
+        <TouchableOpacity style={styles.register}
             onPress={onPressReg}
             
             >
@@ -30,29 +47,36 @@ const Login = ({ navigation }) => {
             </TouchableOpacity>
         </View>
     </View>
+
   )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+
+    },
     login: {
-        height: 290,
+        height: 150,
+        width: 150,
         backgroundColor: 'grey',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
-        borderBottomColor: 'white',
-        borderBottomWidth: 40,
-        borderTopColor: 'white',
-        borderTopWidth: 35
+        justifyContent: 'center',
+        alignItems: 'center',
+
     }, 
     register:{
-        height: 290,
+        height: 150,
+        width: 150,
         backgroundColor: 'grey',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        borderBottomColor: 'white',
-        borderBottomWidth: 50
+        // flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     loginView: {
         display: 'flex',
