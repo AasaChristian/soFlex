@@ -53,30 +53,34 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
+        // display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         alignItems: 'center'
 
     },
     login: {
-        height: 150,
+        height: 100,
         width: 150,
         backgroundColor: 'grey',
-        display: 'flex',
+        // display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 50
 
     }, 
     register:{
-        height: 150,
+        height: 100,
         width: 150,
         backgroundColor: 'grey',
-        display: 'flex',
-        // flexDirection: 'column',
+        // display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        marginLeft: 130,
+        marginTop: 20
+
     },
     loginView: {
         display: 'flex',

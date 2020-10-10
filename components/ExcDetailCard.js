@@ -16,22 +16,9 @@ const ExcDetailCard = () => {
   return(
 
     <View>
-        <Text> Welcome {username}</Text>
+        <Text> work </Text>
         <View style={styles.container}>
 
-          <FlatList
-          data={work}
-          keyExtractor={item => item.key}
-          renderItem={({item}) => (
-            <View >
-              <TouchableOpacity style={styles.touch}>
-                <Text style={styles.text}>{item.name}
-                </Text>
-              </TouchableOpacity>
-              
-            </View>
-          )}
-          />
 
         </View>
         

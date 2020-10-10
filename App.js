@@ -12,40 +12,7 @@ import Head from './components/Head'
 import Login from './components/Login'
 import DashBoard from './components/DashBoard'
 import Nav from './components/Nav';
+import Routes from './Routes'
 
 
-const Stack = createStackNavigator()
-
-const App = () => {
-  return(
-    <NavigationContainer>
-      <Head/>
-      <Stack.Navigator>
-        <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{title: null}}
-        />
-
-        <Stack.Screen
-        name="CredForm"
-        component={CredForm}
-        options={{title: null}}
-        
-        />
-
-        <Stack.Screen
-        name="Dashboard"
-        component={DashBoard}
-        options={{title: null}}
-        />
-      <Nav/>
-      </Stack.Navigator>
-      
-      
-    </NavigationContainer>
-    
-  )
-}
-
-export default App;
+export default Routes

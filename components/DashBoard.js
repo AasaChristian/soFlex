@@ -7,9 +7,10 @@ import data from '../ZDummyData'
 
 
 
-const DashBoard = () => {
+const DashBoard = (props) => {
   const username = data.user.Credentials.userName
     console.log(data.user.Credentials.userName, "data")
+    console.log(props, "props")
 
     const [work, setWork] = useState(data.user.ExerciseH.Standard)
 
