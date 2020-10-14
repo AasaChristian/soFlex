@@ -12,6 +12,7 @@ import Head from './components/Head'
 import Login from './components/Login'
 import DashBoard from './components/DashBoard'
 import Nav from './components/Nav';
+import ExcDetailCard from './components/ExcDetailCard'
 // import { AsyncStorage } from 'react-native';
 
 
@@ -32,19 +33,19 @@ const Routes = () => {
   //   })
   // })
 
-  if (loading){
+  // if (loading){
 
-    return(
+  //   return(
 
-      <View style={[styles.container, styles.horizontal]}>
+  //     <View style={[styles.container, styles.horizontal]}>
 
-      <ActivityIndicator size="large" color="#00ff00" />
-      <ActivityIndicator size="large" color="#00ff00" />
-    </View>
+  //     <ActivityIndicator size="large" color="#00ff00" />
+  //     <ActivityIndicator size="large" color="#00ff00" />
+  //   </View>
 
-    )
+  //   )
     
-  }
+  // }
   return(
     <NavigationContainer>
       <Head/>
@@ -66,6 +67,12 @@ const Routes = () => {
         name="Dashboard"
         component={DashBoard}
         options={{title: "Login"}}
+        />
+
+        <Stack.Screen
+        name="ExcDetailCard"
+        component={ExcDetailCard}
+        options={{title: "ExcDetailCard"}}
         />
       </Stack.Navigator>
       
