@@ -6,12 +6,9 @@ import {
 import data from '../ZDummyData'
 
 
-
-const DashBoard = (props) => {
-  const username = data.user.Credentials.userName
+const DashBoard = ({navigation}) => {
     console.log(data.user.Credentials.userName, "data")
-    console.log(props, "props")
-
+    // console.log(props, "props")
     const [work, setWork] = useState(data.user.ExerciseH.Standard)
 
   return(
@@ -24,7 +21,19 @@ const DashBoard = (props) => {
           keyExtractor={item => item.key}
           renderItem={({item}) => (
             <View >
-              <TouchableOpacity style={styles.touch}>
+              <TouchableOpacity
+              style={styles.touch}
+              onPress={() => {
+                navigation.navigate('ExcDetailCard', {
+                  name: item.name,
+                  weight: item.weight,
+                  sets: item.sets,
+                  reps: item.reps,
+                  key: item.key
+
+                })
+              }}
+              >
                 <Text style={styles.text}>{item.name}
                 </Text>
               </TouchableOpacity>
