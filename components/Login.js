@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, Button, Alert, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard
 } from 'react-native';
-
+import { AsyncStorage } from 'react-native';
 import { onChange } from 'react-native-reanimated';
 
 
@@ -11,39 +11,52 @@ import { onChange } from 'react-native-reanimated';
 
 
 const Login = ({ navigation }) => {
-    const [user, setUser] = useState("whatever")
+
+
+    const [user, setUser] = useState("")
+// Come back to fix asyncStorage
+    // const storeData = async () => {
+    //     try {
+    //       await AsyncStorage.setItem(
+    //         "UserName", `${user}`
+    //       );
+    //     } catch (error) {
+    //       // Error saving data
+    //     }
+    //   };
 
     const handleChanges = e => {
         setUser(e.target.value)   }
         console.log(user, "user")
 
-    // const onPressLogin = () => navigation.navigate('CredForm')
     const onPressLogin = () => navigation.navigate('Dashboard')
+    
     const onPressReg = () => Alert.alert('Register button pressed')
   return(
 
     <View style={styles.loginView}>
-        <TextInput       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        <TextInput       
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
         value={user}
         onChange={text => handleChanges(text)}
-
         />
+
         <View style={styles.container}>
-            <TouchableOpacity style={styles.login}
-            
+            <TouchableOpacity 
+            style={styles.login}
             onPress={onPressLogin}
-            
             >
-            <Text style={styles.buttonText}>LOGIN</Text>
+                <Text 
+                style={styles.buttonText}>Start
+                </Text>
             </TouchableOpacity>
         </View>
 
         <View >
-        <TouchableOpacity style={styles.register}
+            <TouchableOpacity style={styles.register}
             onPress={onPressReg}
-            
             >
-            <Text style={styles.buttonText}>REGISTER</Text>
+                <Text style={styles.buttonText}>REGISTER</Text>
             </TouchableOpacity>
         </View>
     </View>
