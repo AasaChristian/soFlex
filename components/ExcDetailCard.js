@@ -7,16 +7,21 @@ import data from '../ZDummyData'
 
 
 
-const ExcDetailCard = () => {
+const ExcDetailCard = ({route}) => {
   const username = data.user.Credentials.userName
     console.log(data.user.Credentials.userName, "data")
 
-    const [work, setWork] = useState(data.user.ExerciseH.Standard)
+    // const [work, setWork] = useState(data.user.ExerciseH.Standard)
 
   return(
 
     <View>
-        <Text> work </Text>
+        <Text> {route.params.name} </Text>
+        <Text> {route.params.weight} </Text>
+        <Text> {route.params.sets} </Text>
+        <Text> {route.params.reps} </Text>
+        <Text> {route.params.key} </Text>
+        <Text>Details</Text>
         <View style={styles.container}>
 
 
