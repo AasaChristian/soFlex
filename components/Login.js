@@ -34,31 +34,40 @@ const Login = ({ navigation }) => {
     const onPressReg = () => Alert.alert('Register button pressed')
   return(
 
-    <View style={styles.loginView}>
+    <View style={styles.GetContainer}>
         <TextInput       
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        style={styles.text}
         value={user}
         onChange={text => handleChanges(text)}
         />
 
+
         <View style={styles.container}>
+            <View style={styles.textView}>
+              <Text style={styles.bigTalk}>
+                You've Talked Enough!
+                    </Text>
+                <Text style={styles.bigTalk}>
+        Now It's Time To Work!
+        </Text>  
+            </View>
+        
             <TouchableOpacity 
             style={styles.login}
             onPress={onPressLogin}
             >
                 <Text 
-                style={styles.buttonText}>Start
+                style={styles.buttonText}>Lets Get It!
                 </Text>
             </TouchableOpacity>
-        </View>
-
-        <View >
             <TouchableOpacity style={styles.register}
             onPress={onPressReg}
             >
                 <Text style={styles.buttonText}>REGISTER</Text>
             </TouchableOpacity>
         </View>
+
+
     </View>
 
   )
@@ -66,48 +75,64 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        // display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: 350,
+        marginLeft: 30,
+        borderRadius: 5
 
     },
+        GetContainer: {
+            flex: 1,
+            backgroundColor: "yellow",
+            borderRadius: 5
+
+    }, 
     login: {
-        height: 100,
+        height: 150,
         width: 150,
         backgroundColor: 'grey',
-        // display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 50,
+        borderRadius: 100
 
     }, 
     register:{
-        height: 100,
+        height: 30,
         width: 150,
         backgroundColor: 'grey',
         // display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 130,
-        marginTop: 20
+        marginTop: 50,
+        borderRadius: 50
 
     },
-    loginView: {
+
+    // buttonText: {
+    //     textAlign: 'center',
+    //     fontSize: 30,
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     marginTop: 5
+    // },
+    text:{
+        backgroundColor: 'red',
+        borderRadius: 5
+    },
+    bigTalk:{
+        fontStyle: 'italic',
+        color: 'red',
+        fontSize: 40
+    },
+    textView: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around'
-
-    }, 
-
-    buttonText: {
-        textAlign: 'center',
-        fontSize: 30,
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: 5
+        alignItems: 'baseline'
     }
 
 })
